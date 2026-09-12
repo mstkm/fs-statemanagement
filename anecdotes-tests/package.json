@@ -8,7 +8,8 @@
     "verify:tests-exist": "node verify-tests-exist.mjs",
     "verify:tests-not-vacuous": "node verify-tests-not-vacuous.mjs",
     "test:mutation": "node verify-tests-mutation.mjs",
-    "verify:tests-are-real": "npm run verify:tests-not-vacuous && npm run test:mutation"
+    "verify:tests-are-real": "npm run verify:tests-not-vacuous && npm run test:mutation",
+    "server:test": "json-server --watch db-test.json --port 3001"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0",
