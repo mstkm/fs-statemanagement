@@ -37,3 +37,5 @@ export const useAnecdotes = () => {
   return filteredAnecdotes.sort((a, b) => b.votes - a.votes)
 }
 export const useAnecdoteActions = () => useAnecdoteStore((state) => state.actions)
+
+export default useAnecdoteStore
