@@ -1,9 +1,11 @@
 import AnecdoteForm from './components/AnecdoteForm'
 import Notification from './components/Notification'
 import { useAnecdotes } from './hooks/useAnecdotes'
+import { useNotify } from './NotificationContext'
 
 const App = () => {
   const { anecdotes, isPending, isError, voteAnecdote } = useAnecdotes()
+  const notify = useNotify()
 
   if (isPending) {
     return <div>loading data...</div>
@@ -25,7 +27,10 @@ const App = () => {
           <div>{anecdote.content}</div>
           <div>
             has {anecdote.votes}
-            <button onClick={() => voteAnecdote(anecdote)}>vote</button>
+            <button onClick={() => {
+              voteAnecdote(anecdote)
+              notify(`anecdote '${anecdote.content}' voted`)
+            }}>vote</button>
           </div>
         </div>
       ))}

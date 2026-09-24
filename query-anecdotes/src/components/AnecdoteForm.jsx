@@ -1,4 +1,4 @@
-import { useAnecdotes } from "../hooks/useAnecdotes"
+import { useAnecdotes } from '../hooks/useAnecdotes'
 
 const AnecdoteForm = () => {
   const { addAnecdote } = useAnecdotes()
@@ -14,8 +14,8 @@ const AnecdoteForm = () => {
     <div>
       <h3>create new</h3>
       <form onSubmit={onCreate}>
-        <input name="anecdote" />
-        <button type="submit">create</button>
+        <input name='anecdote' />
+        <button type='submit'>create</button>
       </form>
     </div>
   )
